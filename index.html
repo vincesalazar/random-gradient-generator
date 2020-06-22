@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Gradients</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Click on the gradients to change</h1>
+    <div class="wrapper">
+        <div class="combo"></div>
+        <p class="combo-code"></p>
+        <div class="linearGradient"></div>
+        <p class="linearcode"></p>
+        <div class="radialGradient"></div>
+        <p class="radial-code"></p>
+    </div>
+    <script>
+        var colors = [
+            "#042A2B",
+            "#5EB1BF",
+            "#54F2F2",
+            "#FCFCFC",
+            "#F4E04D",
+            "#766C7F",
+            "#947EB0",
+            "#FE5F55",
+            "#FFFAFF",
+            "#D8315B",
+            "#C2A878",
+            "#698F3F"
+        ];
+        var radialGradient = document.querySelector(".radialGradient");
+        var radCode = document.querySelector(".radial-code")
+        radialGradient.addEventListener("click", () => {
+            let indexOne = Math.floor(Math.random() * colors.length);
+            let indexTwo = Math.floor(Math.random() * colors.length);
+            let indexThree = Math.floor(Math.random() * colors.length);
+            let indexFour = Math.floor(Math.random() * colors.length);
+            let indexFive = Math.floor(Math.random() * colors.length);
+            let firstRandomPercent = Math.floor(Math.random() * 0);
+            let secondRandomPercent = Math.floor(Math.random() * 25);
+            let thirdRandomPercent = Math.floor(Math.random() * 75);
+            let fourthRandomPercent = Math.floor(Math.random() * 100);
+            let fifthRandomPercent = Math.floor(Math.random() * 300);
+            radialGradient.style.background = "radial-gradient(circle," + " " + colors[indexOne] + " " + firstRandomPercent + "%," + " " + colors[indexTwo] + " " + secondRandomPercent + "%," + " " + colors[indexThree] + " " + thirdRandomPercent + "%," + " " + colors[indexFour] + " " + fourthRandomPercent + "%," + " " + colors[indexFive] + " " + fifthRandomPercent + "%)"
+            radCode.innerHTML = "background: radial-gradient(circle," + " " + colors[indexOne] + " " + firstRandomPercent + "%," + " " + colors[indexTwo] + " " + secondRandomPercent + "%," + " " + colors[indexThree] + " " + thirdRandomPercent + "%," + " " + colors[indexFour] + " " + fourthRandomPercent + "%," + " " + colors[indexFive] + " " + fifthRandomPercent + "%);"
+        });
+        var linearGradient = document.querySelector(".linearGradient");
+        var lineCode = document.querySelector(".linearcode");
+        // var rotations = ["0", "20", "45", "75", "90", "105", "135", "165", "180", "225", "270", "315"]
+        linearGradient.addEventListener("click", () => {
+            let lineDegree = Math.floor(Math.random() * 360);
+            let indexOne = Math.floor(Math.random() * colors.length);
+            let indexTwo = Math.floor(Math.random() * colors.length);
+            let indexThree = Math.floor(Math.random() * colors.length);
+            let indexFour = Math.floor(Math.random() * colors.length);
+            let indexFive = Math.floor(Math.random() * colors.length);
+            linearGradient.style.background = "linear-gradient(" + lineDegree + "deg," + " " + colors[indexOne] + " " + 0 + "%," + " " + colors[indexTwo] + " " + 25 + "%," + " " + colors[indexThree] + " " + 50 + "%," + " " + colors[indexFour] + " " + 75 + "%," + " " + colors[indexFive] + " " + 100 + "%)";
+            lineCode.innerHTML = "background: linear-gradient(" + lineDegree + "deg," + " " + colors[indexOne] + " " + 0 + "%," + " " + colors[indexTwo] + " " + 25 + "%," + " " + colors[indexThree] + " " + 50 + "%," + " " + colors[indexFour] + " " + 75 + "%," + " " + colors[indexFive] + " " + 100 + "%);";
+        });
+        var combo = document.querySelector(".combo");
+        var type = ["linear-gradient", "radial-gradient"];
+        var randDeg = Math.floor(Math.random() * 360);
+        var degCirc = [randDeg, "circle"];
+        var comboCode = document.querySelector(".combo-code")
+        combo.addEventListener("click", () => {
+            var typeNum = Math.floor(Math.random() * 2);
+            // typeNum = 2
+            if (typeNum == 0) {
+                let lineDegree = Math.floor(Math.random() * 360);
+                let indexOne = Math.floor(Math.random() * colors.length);
+                let indexTwo = Math.floor(Math.random() * colors.length);
+                let indexThree = Math.floor(Math.random() * colors.length);
+                let indexFour = Math.floor(Math.random() * colors.length);
+                let indexFive = Math.floor(Math.random() * colors.length);
+                combo.style.background = "linear-gradient(" + lineDegree + "deg," + " " + colors[indexOne] + " " + 0 + "%," + " " + colors[indexTwo] + " " + 25 + "%," + " " + colors[indexThree] + " " + 50 + "%," + " " + colors[indexFour] + " " + 75 + "%," + " " + colors[indexFive] + " " + 100 + "%)";
+                comboCode.innerHTML = "background: linear-gradient(" + lineDegree + "deg," + " " + colors[indexOne] + " " + 0 + "%," + " " + colors[indexTwo] + " " + 25 + "%," + " " + colors[indexThree] + " " + 50 + "%," + " " + colors[indexFour] + " " + 75 + "%," + " " + colors[indexFive] + " " + 100 + "%);";
+            } else {
+                let indexOne = Math.floor(Math.random() * colors.length);
+                let indexTwo = Math.floor(Math.random() * colors.length);
+                let indexThree = Math.floor(Math.random() * colors.length);
+                let indexFour = Math.floor(Math.random() * colors.length);
+                let indexFive = Math.floor(Math.random() * colors.length);
+                let firstRandomPercent = Math.floor(Math.random() * 0);
+                let secondRandomPercent = Math.floor(Math.random() * 25);
+                let thirdRandomPercent = Math.floor(Math.random() * 75);
+                let fourthRandomPercent = Math.floor(Math.random() * 100);
+                let fifthRandomPercent = Math.floor(Math.random() * 300);
+                combo.style.background = "radial-gradient(circle," + " " + colors[indexOne] + " " + firstRandomPercent + "%," + " " + colors[indexTwo] + " " + secondRandomPercent + "%," + " " + colors[indexThree] + " " + thirdRandomPercent + "%," + " " + colors[indexFour] + " " + fourthRandomPercent + "%," + " " + colors[indexFive] + " " + fifthRandomPercent + "%)";
+                comboCode.innerHTML = "background: radial-gradient(circle," + " " + colors[indexOne] + " " + firstRandomPercent + "%," + " " + colors[indexTwo] + " " + secondRandomPercent + "%," + " " + colors[indexThree] + " " + thirdRandomPercent + "%," + " " + colors[indexFour] + " " + fourthRandomPercent + "%," + " " + colors[indexFive] + " " + fifthRandomPercent + "%);";
+            }
+        });
+        window.addEventListener("load", () => {
+            radialGradient.click();
+            linearGradient.click();
+            combo.click();
+        });
+        // background: linear-gradient(249deg, rgba(190,0,0,1) 0%, rgba(168,0,139,1) 25%, rgba(0,101,176,1) 50%, rgba(195,190,0,1) 75%, rgba(190,0,0,1) 100%, rgba(255,0,0,1) 10025%);
+        // background: rgb(153,122,122);
+        // background: radial-gradient(circle, rgba(153,122,122,1) 0%, rgba(89,149,93,1) 9%, rgba(106,160,109,1) 23%, rgba(209,198,198,1) 37%, rgba(134,65,65,1) 50%, rgba(22,174,193,1) 68%, rgba(135,114,198,1) 80%, rgba(255,0,0,1) 100%);
+    </script>
+</body>
+
+</html>
